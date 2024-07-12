@@ -130,7 +130,7 @@ You can fork this repository by using the following steps:
 
 **Press Enter and your local clone will be created**.
 
-The live link can be found here - [Mastermind GAME](https://mastermind-game-382624b289f8.herokuapp.com/)
+The live link can be found here - [Mastermind Game](https://mastermind-game-382624b289f8.herokuapp.com/)
 
 This project is deployed using the Code Institute's mock terminal for Heroku.
 
