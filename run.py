@@ -49,3 +49,48 @@ def clear_the_terminal():
     This function clears the terminal screen. https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python
     """
     os.system('cls' if os.name == 'nt' else 'clear')
+    
+def get_player_name():
+    """
+    Prompt the player to enter their name. The name must be less than 25 characters
+    and contain no numbers or special characters.
+    """
+    name_attempts = 0
+    max_name_attempts = 4
+    
+    while name_attempts < max_name_attempts:
+        req_name = input(Fore.GREEN + "Please enter your name (must be less than 25 characters, and contain only letters): ")
+
+        if len(req_name) > 25:
+            print(Fore.YELLOW + "\nError: The name should be less than 25 characters.\n")
+            name_attempts += 1
+        
+        elif not req_name.isalpha():
+            print(Fore.YELLOW + "\nError: Invalid input. The name should only contain letters.\n")
+            name_attempts += 1
+
+        else:
+            return req_name
+        
+        if name_attempts == max_name_attempts:
+            print(Fore.CYAN + "Too many invalid attempts. Please start over the game.\n")
+            exit()
+            
+def select_difficulty():
+    """
+    Function to select the difficulty level.
+    """
+    print("Select Difficulty Level:\n")
+    print("1. Easy (10 attempts)")
+    print("2. Medium (7 attempts)")
+    print("3. Hard (5 attempts)\n")
+    choice = input("Enter your choice: ").strip()
+    
+    if choice == "1":
+        return 10
+    elif choice == "2":
+        return 7
+    elif choice == "3":
+        return 5
+    else:
+        print("Invalid choice, please select 1, 2, or 3.")
