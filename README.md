@@ -65,3 +65,30 @@
 The Mastermind game is designed for puzzle enthusiasts and individuals who enjoy strategic, logic-based challenges. It appeals to those who like to test their deductive reasoning and problem-solving skills in a fun, competitive environment. The game is suitable for a wide age range, from older children to adults, making it an excellent choice for family game nights or intellectual entertainment. Its blend of simplicity in concept and complexity in execution makes it engaging for both casual players and serious gamers looking for a stimulating mental exercise. The game's interactive nature and progressively challenging gameplay provide a satisfying experience for those seeking an enjoyable and rewarding pastime.
 
 </details>
+
+## Deployment
+
+### Heroku Deployment
+
+<details>
+<summary>The project is deployed in heroku using the following steps...</summary>
+<br>
+
+1. Create an account or log in to Heroku.
+2. Click "New" on the dashboard and select "Create New App".
+3. Choose a unique app name.
+4. Select your region (US or Europe).
+5. Add payment method if required.
+6. Click "Create App".
+7. Go to the Settings tab.
+8. Under Config Vars, click "Reveal Config Vars".
+9. Add a new Config Var: key = PORT, value = 8000.
+10. Under Buildpacks, click "Add Buildpacks".
+11. Select "python" and then "nodejs". Ensure python is first.
+12. Go to the Deploy tab.
+13. Select GitHub as the deployment method and confirm.
+14. Search and connect your repository.
+15. Choose automatic or manual deploy.
+16. Click "View" to see the live site.
+
+</details>
