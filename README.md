@@ -92,3 +92,46 @@ The Mastermind game is designed for puzzle enthusiasts and individuals who enjoy
 16. Click "View" to see the live site.
 
 </details>
+
+### GitHub Pages
+
+<details>
+<summary>The project is deployed in github pages using the following steps...</summary>
+<br>
+
+1. Log in to GitHub and locate [mastermind-game repository](https://github.com/klsoundarya/mastermind-game)
+2. At the top of the Repository, locate the "Settings" Button on the menu.
+3. Scroll down to "GitHub Pages" Section in Settings page.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. The page will automatically refresh.
+
+If using Gitpod, you can click below to create your own workspace using this repository.
+
+#### Forking
+
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [mastermind-game repository](https://github.com/klsoundarya/mastermind-game)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [mastermind-game repository](https://github.com/klsoundarya/mastermind-game)
+2. Find the Code button situated above the file list and give it a click.
+3. Choose your preferred cloning method — whether it's HTTPS, SSH, or GitHub and hit the copy button to copy the URL to your clipboard.
+4. Launch Git Bash or Terminal.
+5. Navigate to the directory where you want the cloned directory to reside.
+6. In your IDE Terminal, input the following command to clone the repository:
+
+> git clone <https://github.com/klsoundarya/mastermind-game>
+
+**Press Enter and your local clone will be created**.
+
+The live link can be found here - [Mastermind GAME](https://mastermind-game-382624b289f8.herokuapp.com/)
+
+This project is deployed using the Code Institute's mock terminal for Heroku.
+
+</details>
