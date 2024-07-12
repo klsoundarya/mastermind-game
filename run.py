@@ -26,3 +26,26 @@ def title_name():
                             \_|  |_/ \__,_||___/ \__| \___||_|    \_|  |_/|_||_| |_| \__,_|
                                                                     
 """ + Fore.RESET)
+
+def display_rules():
+    """
+    Function to display the game rules.
+    """
+
+    print(Fore.LIGHTRED_EX + "                                         ====▞▞▞▞▞▖🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞===\n" + Fore.RESET)
+    print("                           1. Guess the computer's random 5-digit number within 7 attempts.\n")
+    print("                           2. After each guess, the computer shows:")
+    print("                               - Correct digits in the correct positions.")
+    print("                               - 'X' for incorrect digits.\n")
+    print("                           3. The game provides feedback after each guess to help narrow down the possibilities.\n")
+    print("                           4. Use the feedback to refine your next guess and increase your chances of winning.")
+    print("                               - After winning or losing, player can use 'q' to quit the game and 's' to starting a new game..\n")
+    print("                           5. Have fun playing!\n")
+    print(Fore.LIGHTMAGENTA_EX + "Are you ready to uncover the secret code and become the ultimate Master Mind?\n" + Fore.RESET)
+
+
+def clear_the_terminal():
+    """
+    This function clears the terminal screen. https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
