@@ -17,13 +17,13 @@ def title_name():
     The ASCII art for the title is manually centered by adding spaces at the beginning 
     of each line.
     """
-    print(Fore.GREEN + r"""
-___  ___             _                ___  ___ _             _ 
-|  \/  |            | |               |  \/  |(_)           | |
-| .  . |  __ _  ___ | |_   ___  _ __  | .  . | _  _ __    __| |
-| |\/| | / _` |/ __|| __| / _ \| '__| | |\/| || || '_ \  / _` |
-| |  | || (_| |\__ \| |_ |  __/| |    | |  | || || | | || (_| |
-\_|  |_/ \__,_||___/ \__| \___||_|    \_|  |_/|_||_| |_| \__,_|
+    print(Fore.WHITE + r"""
+        ___  ___             _                ___  ___ _             _ 
+        |  \/  |            | |               |  \/  |(_)           | |
+        | .  . |  __ _  ___ | |_   ___  _ __  | .  . | _  _ __    __| |
+        | |\/| | / _` |/ __|| __| / _ \| '__| | |\/| || || '_ \  / _` |
+        | |  | || (_| |\__ \| |_ |  __/| |    | |  | || || | | || (_| |
+        \_|  |_/ \__,_||___/ \__| \___||_|    \_|  |_/|_||_| |_| \__,_|
 
 """ + Fore.RESET)
 
@@ -32,14 +32,14 @@ def display_rules():
     Function to display the game rules.
     """
 
-    print(Fore.LIGHTRED_EX + "====▞▞▞▞▞▖🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞===\n" + Fore.RESET)
+    print(Fore.LIGHTRED_EX + "▞▞▞▞▞▖ 🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
     print("1. Guess the computer's random 5-digit number within 7 attempts.\n")
     print("2. After each guess, the computer shows:")
     print(" - Correct digits in the correct positions.")
     print(" - 'X' for incorrect digits.\n")
-    print("3. The game provides feedback after each guess to help narrow down the possibilities.\n")
-    print("4. Use the feedback to refine your next guess and increase your chances of winning.")
-    print(" - After winning or losing, player can use 'q' to quit the game and 's' to starting a new game..\n")
+    print("3. Feedback is given after each guess to narrow possibilities.\n")
+    print("4. Use feedback to refine guesses and improve chances.")
+    print(" - After winning or losing, press 'q' to quit or 's' to start a new game.\n")
     print("5. Have fun playing!\n")
     print(Fore.LIGHTMAGENTA_EX + "Are you ready to uncover the secret code and become the ultimate Master Mind?\n" + Fore.RESET)
 
@@ -59,7 +59,7 @@ def get_player_name():
     max_name_attempts = 4
     
     while name_attempts < max_name_attempts:
-        req_name = input(Fore.GREEN + "Please enter your name (must be less than 25 characters, and contain only letters): ")
+        req_name = input(Fore.GREEN + "Please enter your name (max 25 chars, letters only): ")
 
         if len(req_name) > 25:
             print(Fore.YELLOW + "\nError: The name should be less than 25 characters.\n")
