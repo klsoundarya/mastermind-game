@@ -136,6 +136,75 @@ This project is deployed using the Code Institute's mock terminal for Heroku.
 
 </details>
 
+### Design
+
+## UX
+
+<details>
+<summary>User Experience</summary>
+<br>
+
+Mastermind is a classic code-breaking game that challenges players to guess a secret number. Below is an outline of the user experience:
+
+### Five Planes of User Experience
+
+The five planes are like layers that designers think about when making things for people to use. It starts with big ideas and end with the actual look and feel of what users interact with.
+
+#### The Strategy Plane
+
+The Mastermind game aims to provide an engaging and challenging experience for users by having them guess a secret 5-digit number within a specified number of attempts.
+
+#### The Scope Plane
+
+The core functionality of the Mastermind game includes starting a new game, displaying rules and instructions, allowing users to select difficulty levels, making guesses with feedback, tracking the number of attempts, displaying game outcomes (win/lose), and enabling users to restart or quit the game. The content requirements encompass a welcome message and title display, instructions and rules, difficulty level options, feedback messages for each guess, and end-of-game messages (congratulations or encouragement to try again).
+
+#### The Structure Plane
+
+The user begins at the main menu, where they can read the game rules and instructions, select a difficulty level which sets the number of attempts allowed, and then proceed to make guesses and receive feedback on each attempt; after each game, the user has the option to play again or quit.
+
+#### The Skeleton Plane
+
+The interface design for the Mastermind game includes a main menu with options to view rules, select difficulty, and start the game; a game screen with an input field for guessing the number, feedback messages, and the number of remaining attempts; and an end-of-game screen with a message indicating win or loss and an option to play again or quit. The navigation design ensures clear and straightforward transitions between the main menu, game play, and end-of-game screens, with consistent use of color and formatting (using Colorama) to highlight important information and feedback.
+
+Please refer to the [Game Flowchart](#game-flowchart) section.
+
+#### The Surface Plane
+
+The visual design of the Mastermind game includes a carefully chosen color scheme: green for correct digits and positive feedback, yellow for guidance messages and warnings, and red for incorrect digits and end-of-game messages. Clear and readable fonts are used for all text, with emphasis on important feedback. The layout features a centered ASCII art title for an engaging welcome, a clean and simple design for the main menu and game screen, and consistent spacing and alignment to enhance readability. The use of ASCII art for the title and consistent color usage creates a distinctive look and feel for the game, contributing to its unique branding.
+
+[View the live site here.](https://mastermind-game-382624b289f8.herokuapp.com/)
+
+## How to Play
+
+- The goal is to guess the secret 5-digit number correctly within the allotted number of attempts, which varies based on the chosen difficulty level:
+  - Easy: 10 attempts
+  - Medium: 7 attempts
+  - Hard: 5 attempts
+
+- To make a guess, type in a 5-digit number and press enter.
+
+- After each guess, feedback is provided on the digits guessed:
+
+  - If the guessed number is less than the actual number, a message indicates that the guessed number is lower.
+  - If the guessed number is higher than the actual number, a message indicates that the guessed number is higher.
+  - Correct digits in the correct positions are highlighted in green.
+  - Incorrect digits are marked with 'X'.
+
+- Example feedback:
+  - If you guess "12345" and the secret number is "15342":
+    - "1" and "5" are correct and in the right position: They will be highlighted in green.
+    - "3", "4", and "2" are incorrect or not in the right position: They will be marked with 'X'.
+
+- You win if you guess the secret number within the allotted number of attempts, and lose if you fail to do so.
+
+- Once the game is over, you can start a new round and guess a different secret number.
+
+- At any time, you can quit the game by entering 'q'. 
+
+This user-friendly gameplay ensures that players receive clear and actionable feedback, making the game both challenging and engaging.
+
+</details>
+
 ### Tools & Technologies Used
 
 The following technologies were used in this overall project.
