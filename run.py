@@ -114,3 +114,27 @@ def main_menu():
     
     attempts = select_difficulty()
     
+    """Attempts to play/restart the game"""
+    
+    restart_attempts = 0
+    max_restart_attempts = 3
+    
+    while restart_attempts < max_restart_attempts:
+        restart = input("Do you want to play again? (y/n): ").strip().lower()
+        if restart == "y":
+            clear_the_terminal()
+            main_menu()
+        elif restart == "n":
+            clear_the_terminal()
+            print(Fore.LIGHTGREEN_EX + "\nThank you for playing! Goodbye!\n")
+            restart_attempts += 1
+            break
+        else:
+            print(Fore.LIGHTYELLOW_EX + "\nInvalid input. Please enter 'y' or 'n'.\n")
+        
+        if restart_attempts >= max_restart_attempts:
+            print(Fore.CYAN + "\nToo many invalid inputs. Please start over the game again.\n")
+            exit()
+
+if __name__ == "__main__": # This Code executes directly here, when this script runs, from: https://www.youtube.com/watch?v=y_CX2Rvitk8
+    main_menu()

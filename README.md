@@ -14,6 +14,35 @@
 
 </details>
 
+## Table of contents
+
+- [User Stories](#user-stories)
+  - [First Time User Goals](#first-time-user-goals)
+  - [Returning Site Users](#returning-site-users)
+  - [Site Owner Goals](#site-owner-goals)
+  - [Target Audience](#target-audience)
+- [Deployment](#deployment)
+  - [Heroku Deployment](#heroku-deployment)
+  - [GitHub Pages](#github-pages)
+  - [Forking](#forking)
+  - [Making a Local Clone](#making-a-local-clone)
+- [Design](#design)
+  - [UX](#ux)
+  - [How to Play](#how-to-play)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Features to Implement](#features-to-implement)
+- [Testing](#testing)
+  - [Manual Testing](#manual-testing)
+  - [Validator Testing](#validator-testing)
+  - [Bugs](#bugs)
+    - [Unfixed Bugs](#unfixed-bugs)
+- [Credits](#credits)
+  - [Tools & Technologies Used](#tools--technologies-used)
+  - [Modules imported for the script](#modules-imported-for-the-script)
+  - [Acknowledgments](#acknowledgements)
+  - [Disclaimer](#disclaimer)
+
 ### User Stories
 <!-- Read few README documents of previous batches to understand user stories and wrote accordingly -->
 <details>
