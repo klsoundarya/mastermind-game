@@ -94,3 +94,12 @@ def select_difficulty():
         return 5
     else:
         print("Invalid choice, please select 1, 2, or 3.")
+
+def generate_secret_number():
+    """
+    Function to generate a 5-digit secret numbers.
+    """
+    return str(random.randint(10000, 99999))
+
+number = generate_secret_number()
+print(number)
