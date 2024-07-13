@@ -101,5 +101,16 @@ def generate_secret_number():
     """
     return str(random.randint(10000, 99999))
 
-number = generate_secret_number()
-print(number)
+def main_menu():
+    """
+    Function to display the main menu and start/re-start the game.
+    """
+    clear_the_terminal()
+    title_name()
+    display_rules()
+    
+    player_name = get_player_name()
+    print(Fore.YELLOW + f"\nWelcome to the Mastermind Game, {player_name}!\n")
+    
+    attempts = select_difficulty()
+    
