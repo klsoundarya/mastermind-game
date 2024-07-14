@@ -1,10 +1,8 @@
-import colorama 
-from colorama import Fore, Back, Style 
-colorama.init(autoreset=True) # Initialize colorama for color support
-
-import random #Generates random items from sequences, and shuffle lists.
-import os  # Interact with the operating system.
-
+import random  # Generates random items from sequences, and shuffle lists.
+import os   # Interact with the operating system.
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)  # Initialize colorama for color support
 
 # ASCII art generated from Patorjk
 #https://www.digitalocean.com/community/tutorials/python-raw-string
@@ -17,13 +15,13 @@ def title_name():
     The ASCII art for the title is manually centered by adding spaces at the beginning 
     of each line.
     """
-    print(Fore.WHITE + r"""
-        ___  ___             _                ___  ___ _             _ 
-        |  \/  |            | |               |  \/  |(_)           | |
-        | .  . |  __ _  ___ | |_   ___  _ __  | .  . | _  _ __    __| |
-        | |\/| | / _` |/ __|| __| / _ \| '__| | |\/| || || '_ \  / _` |
-        | |  | || (_| |\__ \| |_ |  __/| |    | |  | || || | | || (_| |
-        \_|  |_/ \__,_||___/ \__| \___||_|    \_|  |_/|_||_| |_| \__,_|
+    print(Fore.LIGHTYELLOW_EX + r"""
+            ___  ___             _                ___  ___ _             _ 
+            |  \/  |            | |               |  \/  |(_)           | |
+            | .  . |  __ _  ___ | |_   ___  _ __  | .  . | _  _ __    __| |
+            | |\/| | / _` |/ __|| __| / _ \| '__| | |\/| || || '_ \  / _` |
+            | |  | || (_| |\__ \| |_ |  __/| |    | |  | || || | | || (_| |
+            \_|  |_/ \__,_||___/ \__| \___||_|    \_|  |_/|_||_| |_| \__,_|
 
 """ + Fore.RESET)
 
@@ -32,7 +30,7 @@ def display_rules():
     Function to display the game rules.
     """
 
-    print(Fore.LIGHTRED_EX + "▞▞▞▞▞▖ 🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
+    print(Fore.LIGHTRED_EX + "==========▞▞▞▞▞▖ 🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞==========\n" + Fore.RESET)
     print("1. Guess the computer's random 5-digit number within 7 attempts.\n")
     print("2. After each guess, the computer shows:")
     print(" - Correct digits in the correct positions.")
@@ -41,7 +39,7 @@ def display_rules():
     print("4. Use feedback to refine guesses and improve chances.")
     print(" - After winning or losing, press 'q' to quit or 's' to start a new game.\n")
     print("5. Have fun playing!\n")
-    print(Fore.LIGHTMAGENTA_EX + "Are you ready to uncover the secret code and become the ultimate Master Mind?\n" + Fore.RESET)
+    print(Fore.MAGENTA + "Are you ready to uncover the secret code and become the ultimate Master Mind?\n" + Fore.RESET)
 
 
 def clear_the_terminal():
@@ -59,7 +57,7 @@ def get_player_name():
     max_name_attempts = 4
     
     while name_attempts < max_name_attempts:
-        req_name = input(Fore.GREEN + "Please enter your name (max 25 chars, letters only): ")
+        req_name = input(Fore.LIGHTGREEN_EX + "Please enter your name (max 25 chars, letters only): ")
 
         if len(req_name) > 25:
             print(Fore.YELLOW + "\nError: The name should be less than 25 characters.\n")
@@ -101,6 +99,54 @@ def generate_secret_number():
     """
     return str(random.randint(10000, 99999))
 
+def game_play(player_name, attempts):
+    """
+    Function to play the number guessing game. The player has to guess the 5-digit secret number within 7 attempts.
+    strip() is from: (https://www.w3schools.com/python/ref_string_strip.asp)
+    """
+    secret_number = generate_secret_number() #saving the value in a variable 
+    attempts = 7  # Number of attempts allowed
+    guess_count = 0  # Initialize the guess counter
+    
+    while guess_count < attempts:
+        guess = input(Fore.LIGHTMAGENTA_EX + f"\nTry to guess the 5-digit secret number, you have {attempts - guess_count} attempts left: ").strip()
+        
+        if guess.lower() == 'q':
+            print(Fore.LIGHTGREEN_EX + "\nYou chose to quit the game. Goodbye!\n")
+            return
+        
+        if guess.lower() == 's':
+            print(Fore.LIGHTGREEN_EX + "\nStarting a new game...\n")
+            main_menu()
+            return
+        
+        if not guess.isdigit() or len(guess) != 5:
+            print(Fore.LIGHTYELLOW_EX + "\nInvalid input. Please enter a 5-digit number.\n")
+            continue
+        
+        guess_count += 1
+
+        if int(guess) < int(secret_number):
+            print(Fore.YELLOW + "\nThe number you guessed is lower than the correct number, please try again.\n")
+        elif int(guess) > int(secret_number):
+            print(Fore.YELLOW + "\nThe number you guessed is higher than the correct number, please try again.\n")
+        else:
+            print(Fore.GREEN + f"\nCongratulations! You guessed the correct number {secret_number} in {guess_count} tries! You're a true Mastermind!\n")
+            return
+        
+        correct_digits = 0  #Initializes the counter for correct digits.
+        feedback = ["X"] * 5  #Creates a list of five "X" characters for feedback on correct digits.
+        
+        for i in range(5):
+            if guess[i] == Fore.GREEN + secret_number[i]:
+                correct_digits += 1
+                feedback[i] = Fore.RED + guess[i] + Fore.RESET
+        
+        print(f"Not the correct number, but you got {correct_digits} digit(s) right!\n")
+        print(Fore.GREEN + "Feedback on correct digits: ", " ".join(feedback) + "\n")
+    
+    print(Fore.RED + f"Sorry, the correct number was {secret_number}. Better luck next time!\n")
+
 def main_menu():
     """
     Function to display the main menu and start/re-start the game.
@@ -113,6 +159,7 @@ def main_menu():
     print(Fore.YELLOW + f"\nWelcome to the Mastermind Game, {player_name}!\n")
     
     attempts = select_difficulty()
+    game_play(player_name, attempts)
     
     """Attempts to play/restart the game"""
     
@@ -136,5 +183,7 @@ def main_menu():
             print(Fore.CYAN + "\nToo many invalid inputs. Please start over the game again.\n")
             exit()
 
-if __name__ == "__main__": # This Code executes directly here, when this script runs, from: https://www.youtube.com/watch?v=y_CX2Rvitk8
+# Code executes directly, when script runs in main
+
+if __name__ == "__main__": 
     main_menu()

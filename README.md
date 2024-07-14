@@ -242,6 +242,7 @@ The following technologies were used in this overall project.
 - [ChatGPT](https://chat.openai.com/), [Grammarly](https://app.grammarly.com/) and a [plagiarism checker](https://www.duplichecker.com/) is used to review the text, code and ensure there were no grammar or spelling mistakes.
 - I used [Canva](https://www.canva.com/) to create flow charts and readme documentation. Additionally, I used it to resize all images to a consistent size.
 - I used [Am I Responsive](https://ui.dev/amiresponsive) design to show my webiste in various screen sizes.
+- [CI Python Linter](https://pep8ci.herokuapp.com/) is been used to check for the bugs 
 - I referred to resources such as [stack overflow](https://stackoverflow.com/), [W3Schools](https://www.w3schools.com/css/default.asp) [geeksforgeeks]((https://www.geeksforgeeks.org/python-programming-language-tutorial/)) for assistance in understanding code in few places and finding answers to questions relevant to my coding.
 - [Visual Studio Code](https://code.visualstudio.com/) used as a remote code editor.
 - [Gitpod Enterprise](https://www.gitpod.io/docs/enterprise) used as a cloud-based IDE for development.
