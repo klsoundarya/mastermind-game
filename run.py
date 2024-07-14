@@ -16,21 +16,23 @@ def title_name():
     of each line.
     """
     print(Fore.LIGHTYELLOW_EX + r"""
-            ___  ___             _                ___  ___ _             _ 
-            |  \/  |            | |               |  \/  |(_)           | |
-            | .  . |  __ _  ___ | |_   ___  _ __  | .  . | _  _ __    __| |
-            | |\/| | / _` |/ __|| __| / _ \| '__| | |\/| || || '_ \  / _` |
-            | |  | || (_| |\__ \| |_ |  __/| |    | |  | || || | | || (_| |
-            \_|  |_/ \__,_||___/ \__| \___||_|    \_|  |_/|_||_| |_| \__,_|
+        ___  ___             _                ___  ___ _             _ 
+        |  \/  |            | |               |  \/  |(_)           | |
+        | .  . |  __ _  ___ | |_   ___  _ __  | .  . | _  _ __    __| |
+        | |\/| | / _` |/ __|| __| / _ \| '__| | |\/| || || '_ \  / _` |
+        | |  | || (_| |\__ \| |_ |  __/| |    | |  | || || | | || (_| |
+        \_|  |_/ \__,_||___/ \__| \___||_|    \_|  |_/|_||_| |_| \__,_|
 
 """ + Fore.RESET)
+    
+    print(Fore.LIGHTGREEN_EX + "=======================================================================\n" + Fore.RESET)
 
 def display_rules():
     """
     Function to display the game rules.
     """
-
-    print(Fore.LIGHTRED_EX + "==========▞▞▞▞▞▖ 🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞==========\n" + Fore.RESET)
+    
+    print(Fore.LIGHTRED_EX + "▞▞▞▞▞▞ 🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
     print("1. Guess the computer's random 5-digit number within 7 attempts.\n")
     print("2. After each guess, the computer shows:")
     print(" - Correct digits in the correct positions.")
@@ -142,7 +144,7 @@ def game_play(player_name, attempts):
                 correct_digits += 1
                 feedback[i] = Fore.RED + guess[i] + Fore.RESET
         
-        print(f"Not the correct number, but you got {correct_digits} digit(s) right!\n")
+        print(f"Not the correct number, but you got {correct_digits} digit(s) right\n")
         print(Fore.GREEN + "Feedback on correct digits: ", " ".join(feedback) + "\n")
     
     print(Fore.RED + f"Sorry, the correct number was {secret_number}. Better luck next time!\n")

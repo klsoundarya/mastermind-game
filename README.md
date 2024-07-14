@@ -5,6 +5,14 @@
 - GitHub Profile: <https://github.com/klsoundarya/mastermind-game>
 - Deployed Site: <https://mastermind-game-382624b289f8.herokuapp.com/>
 
+<details>
+<summary>Am I Responsive</summary>
+<br>
+
+![Am I Responsive](read-me/images/am-i-responsive.PNG)
+
+</details>
+
 ## Game Flowchart
 
 <details>
@@ -174,6 +182,63 @@ This project is deployed using the Code Institute's mock terminal for Heroku.
 <br>
 
 Mastermind is a classic code-breaking game that challenges players to guess a secret number. Below is an outline of the user experience:
+
+1. Game Introduction:
+
+- Upon launching the game, the user is welcomed with a colorful ASCII art title and presented with two options:
+  - Starting the game
+  - Displaying the instructions
+
+2. Displaying the Rules:
+
+- If the user chooses to view the instructions, the game rules are displayed:
+  - Guess the computer's random 5-digit number within the allowed attempts.
+  - After each guess, feedback is provided to indicate the correctness of the digits guessed:
+    - Correct digits in the correct positions.
+    - 'X' for incorrect digits.
+  - The game provides feedback after each guess to help narrow down the possibilities.
+  - Use the feedback to refine your next guess and increase your chances of winning.
+  - After winning or losing, the player can start a new game or quit the game.
+
+3. Getting Player Name:
+
+- The user is prompted to enter their name, which must be less than 25 characters and contain only letters.
+
+4. Difficulty Levels:
+
+- The game offers three difficulty levels, allowing users to choose their preferred level:
+  - Easy (10 attempts)
+  - Medium (7 attempts)
+  - Hard (5 attempts)
+
+5. Guessing the Secret Number:
+
+- The user tries to guess the secret 5-digit number.
+- After each guess, feedback is provided:
+  - If the guessed number is less than the actual number, a message indicates that the guessed number is lower.
+  - If the guessed number is higher than the actual number, a message indicates that the guessed number is higher.
+  - Correct digits in the correct positions are highlighted in green.
+  - Incorrect digits are marked with 'X'.
+- The user continues guessing until they find the correct number or exceed the maximum allowed attempts.
+
+6. Game Over:
+
+- The game ends when the number is guessed correctly or the user exceeds the maximum attempts allowed.
+- The user has the option to start a new round and guess a different secret number or quit the game.
+
+7. Command for Quitting:
+
+- At any time, the user can quit the game by entering 'q'.
+
+8. Clear Terminal:
+
+- The terminal is cleared every time a new function is called to simulate a new page appearance, ensuring a clean and organized user interface.
+
+9. Command for Starting/Re-starting:
+
+- At any time, the user can start/re-start the game by entering 's'.
+
+This user experience ensures that players are engaged, challenged, and provided with clear feedback throughout the game, making it both fun and intellectually stimulating.
 
 ### Five Planes of User Experience
 
