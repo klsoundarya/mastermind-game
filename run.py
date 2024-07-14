@@ -25,7 +25,7 @@ def title_name():
 
 """ + Fore.RESET)
     
-    print(Fore.LIGHTGREEN_EX + "=======================================================================\n" + Fore.RESET)
+    print(Fore.LIGHTGREEN_EX + "    =======================================================================\n" + Fore.RESET)
 
 def display_rules():
     """
@@ -41,7 +41,7 @@ def display_rules():
     print("4. Use feedback to refine guesses and improve chances.")
     print(" - After winning or losing, press 'q' to quit or 's' to start a new game.\n")
     print("5. Have fun playing!\n")
-    print(Fore.MAGENTA + "Are you ready to uncover the secret code and become the ultimate Master Mind?\n" + Fore.RESET)
+    print(Fore.YELLOW + "Are you ready to uncover the secret code and become the ultimate Master Mind?\n" + Fore.RESET)
 
 
 def clear_the_terminal():

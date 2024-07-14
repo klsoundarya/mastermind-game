@@ -36,9 +36,10 @@
   - [Making a Local Clone](#making-a-local-clone)
 - [Design](#design)
   - [UX](#ux)
-  - [How to Play](#how-to-play)
 - [Features](#features)
   - [Existing Features](#existing-features)
+  - [How to Play](#how-to-play)
+  - [Look of the Game](#look-of-the-game)
   - [Features to Implement](#features-to-implement)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
@@ -183,13 +184,13 @@ This project is deployed using the Code Institute's mock terminal for Heroku.
 
 Mastermind is a classic code-breaking game that challenges players to guess a secret number. Below is an outline of the user experience:
 
-1. Game Introduction:
+1. **Game Introduction**:
 
 - Upon launching the game, the user is welcomed with a colorful ASCII art title and presented with two options:
   - Starting the game
   - Displaying the instructions
 
-2. Displaying the Rules:
+2. **Displaying the Rules**:
 
 - If the user chooses to view the instructions, the game rules are displayed:
   - Guess the computer's random 5-digit number within the allowed attempts.
@@ -200,18 +201,18 @@ Mastermind is a classic code-breaking game that challenges players to guess a se
   - Use the feedback to refine your next guess and increase your chances of winning.
   - After winning or losing, the player can start a new game or quit the game.
 
-3. Getting Player Name:
+3. **Getting Player Name**:
 
 - The user is prompted to enter their name, which must be less than 25 characters and contain only letters.
 
-4. Difficulty Levels:
+4. **Difficulty Levels**:
 
 - The game offers three difficulty levels, allowing users to choose their preferred level:
   - Easy (10 attempts)
   - Medium (7 attempts)
   - Hard (5 attempts)
 
-5. Guessing the Secret Number:
+5. **Guessing the Secret Number**:
 
 - The user tries to guess the secret 5-digit number.
 - After each guess, feedback is provided:
@@ -221,20 +222,20 @@ Mastermind is a classic code-breaking game that challenges players to guess a se
   - Incorrect digits are marked with 'X'.
 - The user continues guessing until they find the correct number or exceed the maximum allowed attempts.
 
-6. Game Over:
+6. **Game Over**:
 
 - The game ends when the number is guessed correctly or the user exceeds the maximum attempts allowed.
 - The user has the option to start a new round and guess a different secret number or quit the game.
 
-7. Command for Quitting:
+7. **Command for Quitting**:
 
 - At any time, the user can quit the game by entering 'q'.
 
-8. Clear Terminal:
+8. **Clear Terminal**:
 
 - The terminal is cleared every time a new function is called to simulate a new page appearance, ensuring a clean and organized user interface.
 
-9. Command for Starting/Re-starting:
+9. **Command for Starting/Re-starting**:
 
 - At any time, the user can start/re-start the game by entering 's'.
 
@@ -268,6 +269,56 @@ The visual design of the Mastermind game includes a carefully chosen color schem
 
 [View the live site here.](https://mastermind-game-382624b289f8.herokuapp.com/)
 
+</details>
+
+## Features
+
+<details>
+<summary>Project Features</summary>
+<br>
+
+## Existing Features
+
+1. **Color Support with Colorama**:
+   - Utilizes `colorama` for terminal text coloring (`Fore` for foreground colors) throughout the user interface and feedback messages.
+
+2. **ASCII Art Title Display**:
+   - Displays a styled ASCII art title for the game using green color.
+
+3. **Function for Clearing Terminal**:
+   - `clear_the_terminal()` function clears the terminal screen, making the interface cleaner and more interactive.
+
+4. **Player Name Input**:
+   - `get_player_name()` prompts the player to enter their name, validating input length and content (letters only).
+
+5. **Difficulty Selection**:
+   - `select_difficulty()` allows the player to choose between easy, medium, and hard difficulty levels, affecting the number of attempts allowed.
+
+6. **Random Number Generation**:
+   - `generate_secret_number()` generates a random 5-digit number for the player to guess.
+
+7. **Game Rules Display**:
+   - `display_rules()` function provides the rules and instructions for playing the game, formatted with color for emphasis.
+
+8. **Game Play Logic**:
+   - `game_play()` function handles the core gameplay:
+     - Allows the player to guess the secret number within a set number of attempts.
+     - Provides feedback on each guess regarding correctness and position of digits.
+     - Handles user input for quitting or restarting the game.
+
+9. **Main Menu and Restart Functionality**:
+   - `main_menu()` function serves as the central hub for starting or restarting the game.
+   - Prompts the user for input to play again or quit.
+   - Utilizes recursion for restarting the game upon player choice.
+
+10. **Input Validation**:
+    - Validates user inputs throughout the game to ensure they meet expected formats and constraints.
+
+11. **Graceful Exit**:
+    - Provides a clear and informative exit message when the game ends.
+
+These features collectively create an interactive and user-friendly game experience, integrating ASCII art, color-coded text, input validation, and clear game flow management. Each function serves a specific purpose in maintaining the game's structure and enhancing user engagement.
+
 ## How to Play
 
 - The goal is to guess the secret 5-digit number correctly within the allotted number of attempts, which varies based on the chosen difficulty level:
@@ -296,6 +347,14 @@ The visual design of the Mastermind game includes a carefully chosen color schem
 - At any time, you can quit the game by entering 'q'. 
 
 This user-friendly gameplay ensures that players receive clear and actionable feedback, making the game both challenging and engaging.
+
+## Look of the Game
+
+![Welcome page](read-me/images/)
+![Error message](read-me/images/)
+![Game instructions](read-me/images/)
+
+## Features to Implement
 
 </details>
 
