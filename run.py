@@ -5,15 +5,15 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)  # Initialize colorama for color support
 
 # ASCII art generated from Patorjk
-#https://www.digitalocean.com/community/tutorials/python-raw-string
+# https://www.digitalocean.com/community/tutorials/python-raw-string
+
 
 def title_name():
     """
     Function to print the game title in green ASCII art.
 
-    This function uses the colorama library to print the game title in green color.
-    The ASCII art for the title is manually centered by adding spaces at the beginning 
-    of each line.
+    This function uses the colorama library to print the title in green color.
+    The ASCII title is centered by adding spaces at the start of each line..
     """
     print(Fore.LIGHTYELLOW_EX + r"""
         ___  ___             _                ___  ___ _             _ 
@@ -24,8 +24,7 @@ def title_name():
         \_|  |_/ \__,_||___/ \__| \___||_|    \_|  |_/|_||_| |_| \__,_|
 
 """ + Fore.RESET)
-    
-    print(Fore.LIGHTGREEN_EX + "    =======================================================================\n" + Fore.RESET)
+    print("    ============================================================\n")
 
 def display_rules():
     """
@@ -33,14 +32,15 @@ def display_rules():
     """
     
     print(Fore.LIGHTRED_EX + "▞▞▞▞▞▞ 🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
-    print("1. Guess the computer's random 5-digit number within 7 attempts.\n")
-    print("2. After each guess, the computer shows:")
+    print("1. Guess the computer's random 5-digit number within the chosen difficulty level.\n")
+    print("2. Choose a number between 10,000 and 99,999.\n")
+    print("3. After each guess, the computer shows:")
     print(" - Correct digits in the correct positions.")
     print(" - 'X' for incorrect digits.\n")
-    print("3. Feedback is given after each guess to narrow possibilities.\n")
-    print("4. Use feedback to refine guesses and improve chances.")
+    print("4. Feedback is given after each guess to narrow possibilities.\n")
+    print("5. Use feedback to refine guesses and improve chances.")
     print(" - After winning or losing, press 'q' to quit or 's' to start a new game.\n")
-    print("5. Have fun playing!\n")
+    print("6. Have fun playing!\n")
     print(Fore.YELLOW + "Are you ready to uncover the secret code and become the ultimate Master Mind?\n" + Fore.RESET)
 
 
@@ -111,10 +111,10 @@ def game_play(player_name, attempts):
     guess_count = 0  # Initialize the guess counter
     
     while guess_count < attempts:
-        guess = input(Fore.LIGHTMAGENTA_EX + f"\nTry to guess the 5-digit secret number, you have {attempts - guess_count} attempts left: ").strip()
+        guess = input(Fore.RED + f"\nHello, {player_name}! Try to guess the 5-digit secret number, you have {attempts - guess_count} attempts left: ").strip()
         
         if guess.lower() == 'q':
-            print(Fore.LIGHTGREEN_EX + "\nYou chose to quit the game. Goodbye!\n")
+            print(Fore.LIGHTGREEN_EX + "\nYou chose to quit the game. Goodbye, {player_name}!\n")
             return
         
         if guess.lower() == 's':
@@ -133,7 +133,7 @@ def game_play(player_name, attempts):
         elif int(guess) > int(secret_number):
             print(Fore.YELLOW + "\nThe number you guessed is higher than the correct number, please try again.\n")
         else:
-            print(Fore.GREEN + f"\nCongratulations! You guessed the correct number {secret_number} in {guess_count} tries! You're a true Mastermind!\n")
+            print(Fore.GREEN +  f"\nCongratulations, {player_name}! You guessed the correct number {secret_number} in {guess_count} tries! You're a true Mastermind!\n")
             return
         
         correct_digits = 0  #Initializes the counter for correct digits.
@@ -147,7 +147,7 @@ def game_play(player_name, attempts):
         print(f"Not the correct number, but you got {correct_digits} digit(s) right\n")
         print(Fore.GREEN + "Feedback on correct digits: ", " ".join(feedback) + "\n")
     
-    print(Fore.RED + f"Sorry, the correct number was {secret_number}. Better luck next time!\n")
+    print(Fore.RED + f"Sorry, {player_name}. The correct number was {secret_number}. Better luck next time!\n")
 
 def main_menu():
     """
