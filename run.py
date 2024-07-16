@@ -31,7 +31,7 @@ def display_rules():
     """
     Function to display the game rules.
     """
-    print(Fore.LIGHTRED_EX + "▞▞▞▞▞▞ 🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
+    print(Fore.LIGHTRED_EX + "▞▞▞▞▞ 🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
     print("1. Guess the random 5-digit number within the difficulty level.\n")
     print("2. Choose a number between 10,000 and 99,999.\n")
     print("3. After each guess, the computer shows:")
@@ -41,7 +41,7 @@ def display_rules():
     print("5. Use feedback to refine guesses and improve chances.")
     print(" - After winning or losing, press 'q' to quit or 's' to start.\n")
     print("6. Have fun playing!\n")
-    print(Fore.GREEN + "Ready to uncover the code and be the Mastermind?\n")
+    print(Fore.LIGHTGREEN_EX + "Are you ready to be the Mastermind?\n")
 
 
 def clear_the_terminal():
@@ -80,19 +80,20 @@ def select_difficulty():
     """
     Function to select the difficulty level.
     """
-    print("Select Difficulty Level:\n")
-    print("1. Easy (10 attempts)")
-    print("2. Medium (7 attempts)")
-    print("3. Hard (5 attempts)\n")
-    choice = input("Enter your choice: ").strip()
-    if choice == "1":
-        return 10
-    elif choice == "2":
-        return 7
-    elif choice == "3":
-        return 5
-    else:
-        print("Invalid choice, please select 1, 2, or 3.")
+    while True:
+        print("Select Difficulty Level:\n")
+        print("1. Easy (10 attempts)")
+        print("2. Medium (7 attempts)")
+        print("3. Hard (5 attempts)\n")
+        choice = input("Enter your choice: ").strip()
+        if choice == "1":
+            return 10
+        elif choice == "2":
+            return 7
+        elif choice == "3":
+            return 5
+        else:
+            print("Invalid choice, please select 1, 2, or 3.")
 
 
 def generate_secret_number():
@@ -107,19 +108,18 @@ def game_play(player_name, attempts):
     Function to play game, the player has to guess the 5-digit secret number.
     """
     secret_number = generate_secret_number()  # saving the value in a variable
-    attempts = 7  # Number of attempts allowed
     guess_count = 0  # Initialize the guess counter
     while guess_count < attempts:
-        input(Fore.RED + f"\nYou have {attempts- guess_count} attempts left: ")
+        guess = input(Fore.RED + f"\nYou have {attempts - guess_count} attempts left: ")
         if guess.lower() == 'q':
-            print(Fore.LIGHTGREEN_EX + "\nYou quit. Goodbye, {player_name}!\n")
+            print(Fore.LIGHTGREEN_EX + f"\nYou quit. Goodbye, {player_name}!\n")
             return
         if guess.lower() == 's':
             print(Fore.LIGHTGREEN_EX + "\nStarting a new game...\n")
             main_menu()
             return
         if not guess.isdigit() or len(guess) != 5:
-            print(Fore.yellow + "\nInvalid input. Enter only a number.\n")
+            print(Fore.YELLOW + "\nInvalid input. Enter only a number.\n")
             continue
         guess_count += 1
 
@@ -128,17 +128,17 @@ def game_play(player_name, attempts):
         elif int(guess) > int(secret_number):
             print(Fore.YELLOW + "\nYour guess is too high. Try again.\n")
         else:
-            print(Fore.GREEN + f"\nFab! {secret_number} is the secret num!\n")
+            print(Fore.GREEN + f"\nFab! {secret_number} is the secret number!\n")
             return
         correct_digits = 0  # Initializes the counter for correct digits.
         feedback = ["X"] * 5  # Creates a list of five "X" characters.
         for i in range(5):
-            if guess[i] == Fore.GREEN + secret_number[i]:
+            if guess[i] == secret_number[i]:
                 correct_digits += 1
-                feedback[i] = Fore.RED + guess[i] + Fore.RESET
-        print(f"Not a right num, but you got {correct_digits} digits right\n")
+                feedback[i] = Fore.LIGHTRED_EX + guess[i] + Fore.RESET
+        print(f"Not the right number, but you got {correct_digits} digits right\n")
         print(Fore.GREEN + "Feedback on digits: ", " ".join(feedback) + "\n")
-    print(Fore.RED + f"Sorry, {player_name}. The num was {secret_number}.\n")
+    print(Fore.RED + f"Sorry, {player_name}. The number was {secret_number}.\n")
 
 
 def main_menu():
@@ -163,10 +163,10 @@ def main_menu():
         elif restart == "n":
             clear_the_terminal()
             print(Fore.LIGHTGREEN_EX + "\nThank you for playing! Goodbye!\n")
-            restart_attempts += 1
             break
         else:
-            print(Fore.yellow + "\nInvalid input, please enter 'y'/'n'.\n")
+            print(Fore.YELLOW + "\nInvalid input, please enter 'y'/'n'.\n")
+        restart_attempts += 1
         if restart_attempts >= max_restart_attempts:
             print(Fore.CYAN + "\nToo many invalid tries, please start over\n")
             exit()

@@ -186,58 +186,58 @@ Mastermind is a classic code-breaking game that challenges players to guess a se
 
 1. **Game Introduction**:
 
-- Upon launching the game, the user is welcomed with a colorful ASCII art title and presented with two options:
-  - Starting the game
-  - Displaying the instructions
+   - Upon launching the game, the user is welcomed with a colorful ASCII art title and presented with two options:
+     - Starting the game
+     - Displaying the instructions
 
 2. **Displaying the Rules**:
 
-- If the user chooses to view the instructions, the game rules are displayed:
-  - Guess the computer's random 5-digit number within the allowed attempts.
-  - After each guess, feedback is provided to indicate the correctness of the digits guessed:
-    - Correct digits in the correct positions.
-    - 'X' for incorrect digits.
-  - The game provides feedback after each guess to help narrow down the possibilities.
-  - Use the feedback to refine your next guess and increase your chances of winning.
-  - After winning or losing, the player can start a new game or quit the game.
+   - If the user chooses to view the instructions, the game rules are displayed:
+     - Guess the computer's random 5-digit number within the allowed attempts.
+     - After each guess, feedback is provided to indicate the correctness of the digits guessed:
+       - Correct digits in the correct positions.
+       - 'X' for incorrect digits.
+     - The game provides feedback after each guess to help narrow down the possibilities.
+     - Use the feedback to refine your next guess and increase your chances of winning.
+     - After winning or losing, the player can start a new game or quit the game.
 
 3. **Getting Player Name**:
 
-- The user is prompted to enter their name, which must be less than 25 characters and contain only letters.
+   - The user is prompted to enter their name, which must be less than 25 characters and contain only letters.
 
 4. **Difficulty Levels**:
 
-- The game offers three difficulty levels, allowing users to choose their preferred level:
-  - Easy (10 attempts)
-  - Medium (7 attempts)
-  - Hard (5 attempts)
+   - The game offers three difficulty levels, allowing users to choose their preferred level:
+     - Easy (10 attempts)
+     - Medium (7 attempts)
+     - Hard (5 attempts)
 
 5. **Guessing the Secret Number**:
 
-- The user tries to guess the secret 5-digit number.
-- After each guess, feedback is provided:
-  - If the guessed number is less than the actual number, a message indicates that the guessed number is lower.
-  - If the guessed number is higher than the actual number, a message indicates that the guessed number is higher.
-  - Correct digits in the correct positions are highlighted in green.
-  - Incorrect digits are marked with 'X'.
-- The user continues guessing until they find the correct number or exceed the maximum allowed attempts.
+   - The user tries to guess the secret 5-digit number.
+   - After each guess, feedback is provided:
+     - If the guessed number is less than the actual number, a message indicates that the guessed number is lower.
+     - If the guessed number is higher than the actual number, a message indicates that the guessed number is higher.
+     - Correct digits in the correct positions are highlighted in green.
+     - Incorrect digits are marked with 'X'.
+   - The user continues guessing until they find the correct number or exceed the maximum allowed attempts.
 
 6. **Game Over**:
 
-- The game ends when the number is guessed correctly or the user exceeds the maximum attempts allowed.
-- The user has the option to start a new round and guess a different secret number or quit the game.
+   - The game ends when the number is guessed correctly or the user exceeds the maximum attempts allowed.
+   - The user has the option to start a new round and guess a different secret number or quit the game.
 
 7. **Command for Quitting**:
 
-- At any time, the user can quit the game by entering 'q'.
+   - At any time, the user can quit the game by entering 'q'.
 
 8. **Clear Terminal**:
 
-- The terminal is cleared every time a new function is called to simulate a new page appearance, ensuring a clean and organized user interface.
+   - The terminal is cleared every time a new function is called to simulate a new page appearance, ensuring a clean and organized user interface.
 
 9. **Command for Starting/Re-starting**:
 
-- At any time, the user can start/re-start the game by entering 's'.
+   - At any time, the user can start/re-start the game by entering 's'.
 
 This user experience ensures that players are engaged, challenged, and provided with clear feedback throughout the game, making it both fun and intellectually stimulating.
 
@@ -344,7 +344,7 @@ These features collectively create an interactive and user-friendly game experie
 
 - Once the game is over, you can start a new round and guess a different secret number.
 
-- At any time, you can quit the game by entering 'q'. 
+- At any time, you can quit the game by entering 'q'.
 
 This user-friendly gameplay ensures that players receive clear and actionable feedback, making the game both challenging and engaging.
 
@@ -358,15 +358,17 @@ This user-friendly gameplay ensures that players receive clear and actionable fe
 
 </details>
 
+### Credits
+
 ### Tools & Technologies Used
 
 The following technologies were used in this overall project.
 
-- My project is inspired from [code institute](https://learn.codeinstitute.net/) Love Sandwiches Walkthrough Project 
+- My project is inspired from [code institute](https://learn.codeinstitute.net/) Love Sandwiches Walkthrough Project
 - [ChatGPT](https://chat.openai.com/), [Grammarly](https://app.grammarly.com/) and a [plagiarism checker](https://www.duplichecker.com/) is used to review the text, code and ensure there were no grammar or spelling mistakes.
 - I used [Canva](https://www.canva.com/) to create flow charts and readme documentation. Additionally, I used it to resize all images to a consistent size.
 - I used [Am I Responsive](https://ui.dev/amiresponsive) design to show my webiste in various screen sizes.
-- [CI Python Linter](https://pep8ci.herokuapp.com/) is been used to check for the bugs 
+- [CI Python Linter](https://pep8ci.herokuapp.com/) is been used to check for the bugs
 - I referred to resources such as [stack overflow](https://stackoverflow.com/), [W3Schools](https://www.w3schools.com/css/default.asp) [geeksforgeeks]((https://www.geeksforgeeks.org/python-programming-language-tutorial/)) for assistance in understanding code in few places and finding answers to questions relevant to my coding.
 - [Visual Studio Code](https://code.visualstudio.com/) used as a remote code editor.
 - [Gitpod Enterprise](https://www.gitpod.io/docs/enterprise) used as a cloud-based IDE for development.
@@ -377,6 +379,12 @@ The following technologies were used in this overall project.
 - Colorama used in Python project [YouTube](https://www.youtube.com/watch?v=Yq5tL6be0Yk).
 - I used import os to clear terminal output [GeeksforGeeks](https://www.geeksforgeeks.org/clear-screen-python/) and
 - I took game play reference of master-mind game from [geeksforgeeks](https://www.geeksforgeeks.org/mastermind-game-using-python/), [Michael Goddard](https://www.youtube.com/watch?v=NLfxNo7Q0Pk), [Programming Fluency](https://www.youtube.com/watch?v=oLiiIRZbZsk).
+
+### Modules imported for the script
+
+- **random**: Used for generating random numbers.
+- **os**: Facilitates interaction with the operating system.
+- **colorama**: Enables colored text output in the terminal.
 
 ### Acknowledgements
 
