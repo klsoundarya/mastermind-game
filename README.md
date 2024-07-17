@@ -1,6 +1,6 @@
 # [Master Mind GAME](https://mastermind-game-382624b289f8.herokuapp.com/)
 
-**Master Mind** is a Python-based number guessing game that challenges players to guess a secret five-digit code within seven attempts. This game showcases Python's flexibility and strength. After each guess, players receive feedback to help guide them toward the correct answer. Can you uncover the secret code and become the ultimate Master Mind? This project is part of the third portfolio assignment for the Code Institute course.
+**Master Mind** is a Python-based number guessing game that challenges players to guess a secret five-digit code within the chosen difficulty level. This game showcases Python's flexibility and strength. After each guess, players receive feedback to help guide them toward the correct answer. Can you uncover the secret code and become the ultimate Master Mind? This project is part of the third portfolio assignment for the Code Institute course.
 
 - GitHub Profile: <https://github.com/klsoundarya/mastermind-game>
 - Deployed Site: <https://mastermind-game-382624b289f8.herokuapp.com/>
@@ -18,6 +18,8 @@
 <details>
 <br>
 
+Due to ongoing changes in the project development process, the current flowchart design differs slightly from the project as it is now.
+
 ![screenshot](read-me/images/master-mind-game-flowchart.png)
 
 </details>
@@ -31,12 +33,11 @@
   - [Target Audience](#target-audience)
 - [Deployment](#deployment)
   - [Heroku Deployment](#heroku-deployment)
-  - [GitHub Pages](#github-pages)
   - [Forking](#forking)
   - [Making a Local Clone](#making-a-local-clone)
 - [Design](#design)
   - [UX](#ux)
-- [Features](#features) 
+- [Features](#features)
   - [Existing Features](#existing-features)
   - [How to Play](#how-to-play)
   - [Features to Implement](#features-to-implement)
@@ -54,6 +55,8 @@
 
 ### User Stories
 <!-- Read few README documents of previous batches to understand user stories and wrote accordingly -->
+<!-- Some of the mentioned user stories have already been implemented, while the remaining ones are planned for future features. -->
+
 <details>
 <summary>User Goals</summary>
 <br>
@@ -131,21 +134,11 @@ The Mastermind game is designed for puzzle enthusiasts and individuals who enjoy
 
 </details>
 
-### GitHub Pages
+#### Forking
 
 <details>
-<summary>The project is deployed in github pages using the following steps...</summary>
+<summary></summary>
 <br>
-
-1. Log in to GitHub and locate [mastermind-game repository](https://github.com/klsoundarya/mastermind-game)
-2. At the top of the Repository, locate the "Settings" Button on the menu.
-3. Scroll down to "GitHub Pages" Section in Settings page.
-4. Under "Source", click the dropdown called "None" and select "Master Branch".
-5. The page will automatically refresh.
-
-If using Gitpod, you can click below to create your own workspace using this repository.
-
-#### Forking
 
 By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
 
@@ -384,16 +377,16 @@ By incorporating these features, it will attract a broader audience to enjoy the
 <summary>User Testing</summary>
 <br>
 
-| No. 	| Action                              	| Expected Behavior                                                                                                                                                                                                                                                                                                                                                                                                                                                                               	| Pass/Fail 	|
-|-----	|-------------------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|-----------	|
-| 1.  	| ![Welcome-rules](read-me/manual-testing/welcome-rules.PNG)          	| The welcome rules explain the Mastermind game's rules, including how to quit and start a new game.                                                                                                                                                                                                                                                                                                                                                                                              	| Pass      	|
-| 2.  	| ![Name-error-messages](read-me/manual-testing/name-error-message.PNG)    	| During manual testing, it was observed that the user receives appropriate error messages when entering invalid names. The errors include names with numbers or special characters, names exceeding 25 characters, and names containing spaces. After multiple invalid attempts, the user is prompted with a message indicating too many invalid tries, suggesting to start over. This functionality appears to be working as intended, providing clear and concise feedback for invalid inputs. 	| Pass      	|
-| 3.  	| ![Retry-name](read-me/manual-testing/retry-name.PNG)             	| The program repeatedly prompts the player with "Retry entering your name? (y/n):" without properly validating the response. This leads to invalid responses and an infinite loop.                                                                                                                                                                                                                                                                                                               	| Pass      	|
-| 4.  	| ![Chose-difficulty-level](read-me/manual-testing/chose-difficulty-level.PNG) 	| The program accurately guides the user to choose a difficulty level and input a 5-digit number. Furthermore, it provides correct feedback indicating whether the guess is "too high" or "too low," and appropriately responds to individual digits entered.                                                                                                                                                                                                                                     	| Pass      	|
-| 5.  	| ![Right-guess](read-me/manual-testing/right-guess.PNG)            	| This works as expected; after correctly guessing, the player will see the secret 5-digit number, proving themselves to be a true mastermind.                                                                                                                                                                                                                                                                                                                                                    	| Pass      	|
-| 6.  	| ![Lost-the-game](read-me/manual-testing/lost-the-game.PNG)          	| Upon an incorrect guess or exhaustion of attempts, the player will be shown the secret 5-digit number and prompted to replay the game, functioning as intended.                                                                                                                                                                                                                                                                                                                                 	| Pass      	|
-| 7.  	| ![q-func](read-me/manual-testing/q-func.PNG)                 	| The 'q' as quit function operates as expected during the game.                                                                                                                                                                                                                                                                                                                                                                                                                                  	| Pass      	|
-| 8.  	| ![s-to-start](read-me/manual-testing/s-to-start.PNG)             	| The 's' for Starting the game again functions as expected during gameplay.                                                                                                                                                                                                                                                                                                                                                                                                                      	| Pass      	|
+| No.  | Action                               | Expected Behavior                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Pass/Fail  |
+|----- |------------------------------------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |----------- |
+| 1.   | ![Welcome-rules](read-me/manual-testing/welcome-rules.PNG)           | The welcome rules explain the Mastermind game's rules, including how to quit and start a new game.                                                                                                                                                                                                                                                                                                                                                                                               | Pass       |
+| 2.   | ![Name-error-messages](read-me/manual-testing/name-error-message.PNG)     | During manual testing, it was observed that the user receives appropriate error messages when entering invalid names. The errors include names with numbers or special characters, names exceeding 25 characters, and names containing spaces. After multiple invalid attempts, the user is prompted with a message indicating too many invalid tries, suggesting to start over. This functionality appears to be working as intended, providing clear and concise feedback for invalid inputs.  | Pass       |
+| 3.   | ![Retry-name](read-me/manual-testing/retry-name.PNG)              | The program repeatedly prompts the player with "Retry entering your name? (y/n):" without properly validating the response. This leads to invalid responses and an infinite loop.                                                                                                                                                                                                                                                                                                                | Pass       |
+| 4.   | ![Chose-difficulty-level](read-me/manual-testing/chose-difficulty-level.PNG)  | The program accurately guides the user to choose a difficulty level and input a 5-digit number. Furthermore, it provides correct feedback indicating whether the guess is "too high" or "too low," and appropriately responds to individual digits entered.                                                                                                                                                                                                                                      | Pass       |
+| 5.   | ![Right-guess](read-me/manual-testing/right-guess.PNG)             | This works as expected; after correctly guessing, the player will see the secret 5-digit number, proving themselves to be a true mastermind.                                                                                                                                                                                                                                                                                                                                                     | Pass       |
+| 6.   | ![Lost-the-game](read-me/manual-testing/lost-the-game.PNG)           | Upon an incorrect guess or exhaustion of attempts, the player will be shown the secret 5-digit number and prompted to replay the game, functioning as intended.                                                                                                                                                                                                                                                                                                                                  | Pass       |
+| 7.   | ![q-func](read-me/manual-testing/q-func.PNG)                  | The 'q' as quit function operates as expected during the game.                                                                                                                                                                                                                                                                                                                                                                                                                                   | Pass       |
+| 8.   | ![s-to-start](read-me/manual-testing/s-to-start.PNG)              | The 's' for Starting the game again functions as expected during gameplay.                                                                                                                                                                                                                                                                                                                                                                                                                       | Pass       |
 
 </details>
 
@@ -411,9 +404,9 @@ The game passed through the **Lighthouse test**
 
 [PEP8 CI Linter](https://pep8ci.herokuapp.com) was used to validate my **run.py** file.
 
-| Testing                    	| Notes                                                                                               	| Report  	|
-|----------------------------	|-----------------------------------------------------------------------------------------------------	|---------	|
-| ![PEP8-warnings](read-me/validator-testing/pep8-unfixed-bug.PNG) 	| The whitespace in the title art cannot be removed, as it would distort the appearance of the title. 	| Unfixed 	|
+| Testing                     | Notes                                                                                                | Report   |
+|---------------------------- |----------------------------------------------------------------------------------------------------- |--------- |
+| ![PEP8-warnings](read-me/validator-testing/pep8-unfixed-bug.PNG)  | The whitespace in the title art cannot be removed, as it would distort the appearance of the title.  | Unfixed  |
 
 </details>
 
@@ -423,15 +416,15 @@ The game passed through the **Lighthouse test**
 <summary>Bugs Fixed</summary>
 <br>
 
-| No. 	| Bugs               	| Solution                                                                                                                                                                                                                                           	| Notes 	|
-|-----	|--------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|-------	|
-| 1.  	| ![Bug 1](read-me/bugs/bug1.PNG) 	| Code issues include trailing whitespace (W291), insufficient spaces before inline comments (E261), module level imports not at the top (E402), block comments not starting with '#' (E265), and lines exceeding 79 characters (E501).              	| Fixed   	|
-| 2.  	| ![Bug 2](read-me/bugs/bug2.PNG) 	| There are issues with trailing whitespace, line length exceeding 79 characters, and incorrect blank line formatting throughout the code.                                                                                                           	| Fixed   	|
-| 3.  	| ![Bug 3](read-me/bugs/bug3.PNG) 	| There are issues with lines exceeding character limits (106, 114, 117, 126, 132, 134, 136), incorrect indentation spaces (109), missing '#' for inline comment (109), and unnecessary blank lines containing whitespace (112, 115, 119, 124, 128). 	| Fixed   	|
+| No.  | Bugs                | Solution                                                                                                                                                                                                                                            | Notes  |
+|----- |-------------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |------- |
+| 1.   | ![Bug 1](read-me/bugs/bug1.PNG)  | Code issues include trailing whitespace (W291), insufficient spaces before inline comments (E261), module level imports not at the top (E402), block comments not starting with '#' (E265), and lines exceeding 79 characters (E501).               | Fixed    |
+| 2.   | ![Bug 2](read-me/bugs/bug2.PNG)  | There are issues with trailing whitespace, line length exceeding 79 characters, and incorrect blank line formatting throughout the code.                                                                                                            | Fixed    |
+| 3.   | ![Bug 3](read-me/bugs/bug3.PNG)  | There are issues with lines exceeding character limits (106, 114, 117, 126, 132, 134, 136), incorrect indentation spaces (109), missing '#' for inline comment (109), and unnecessary blank lines containing whitespace (112, 115, 119, 124, 128).  | Fixed    |
 
 ### Unfixed Bugs
 
-The only remaining issue to fix is the trailing whitespace in the title art..
+There are no bugs to be fixed
 
 </details>
 

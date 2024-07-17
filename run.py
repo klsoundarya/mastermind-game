@@ -31,7 +31,7 @@ def display_rules():
     """
     Function to display the game rules.
     """
-    print(Fore.LIGHTRED_EX + "▞▞▞▞▞  🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
+    print(Fore.LIGHTRED_EX + "\n▞▞▞▞▞  🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
     print("1. Guess the random 5-digit number within the difficulty level.\n")
     print("2. Choose a number between 10,000 and 99,999.\n")
     print("3. After each guess, the computer shows:")
@@ -39,7 +39,8 @@ def display_rules():
     print(" - 'X' for incorrect digits.\n")
     print("4. Feedback is given after each guess to narrow possibilities.\n")
     print("5. Use feedback to refine guesses and improve chances.")
-    print(" - After winning or losing, press 'q' to quit or 's' to start.\n")
+    print(" - Player can enter 'q' to quit any time in the game.\n")
+    print(" - User can enter 's' to start any time in the game.\n")
     print("6. Have fun playing!\n")
     print(Fore.LIGHTGREEN_EX + "Are you ready to be the Mastermind?\n")
 
@@ -60,7 +61,8 @@ def get_player_name():
     max_name_attempts = 4
 
     while name_attempts < max_name_attempts:
-        req_name = input(Fore.RED + "Please enter your name (max 25 chars): ")
+        req_name = input(Fore.RED + "\nPlease enter your name" +
+                         "(max 25 chars): ")
 
         if len(req_name) > 25:
             print(Fore.YELLOW + "\nError: Name must be under 25 chars.\n")
@@ -122,7 +124,8 @@ def game_play(player_name, attempts):
     secret_number = generate_secret_number()  # saving the value in a variable
     guess_count = 0  # Initialize the guess counter
     while guess_count < attempts:
-        guess = input(f"\nEnter a num in {attempts - guess_count} attempts:  ")
+        guess = input(f"\nEnter a num in {attempts - guess_count} attempts" +
+                      "(within the range 10,000 and 99,999):  ")
         if guess.lower() == 'q':
             print(Fore.LIGHTGREEN_EX + f"You quit. Goodbye, {player_name}!\n")
             return
@@ -130,8 +133,11 @@ def game_play(player_name, attempts):
             print(Fore.LIGHTGREEN_EX + "\nStarting a new game...\n")
             main_menu()
             return
-        if not guess.isdigit() or len(guess) != 5:
-            print(Fore.YELLOW + "\nInvalid input. Enter 5 digit num.\n")
+        if (not guess.isdigit() or
+                len(guess) != 5 or
+                not (10000 <= int(guess) <= 99999)):
+            print(Fore.YELLOW + "\nInvalid input. Enter a num "
+                  "(within the range 10,000 and 99,999):  \n")
             continue
         guess_count += 1
 
@@ -159,7 +165,17 @@ def main_menu():
     """
     clear_the_terminal()
     title_name()
-    display_rules()
+    while True:
+        print("Choose an option:\n")
+        print("1. Check the rules")
+        print("2. Start the game\n")
+        choice = input("Enter your choice (1 or 2): ").strip()
+        if choice == "1":
+            display_rules()
+        elif choice == "2":
+            break
+        else:
+            print(Fore.YELLOW + "Invalid choice, please select 1 or 2.\n")
     player_name = get_player_name()
     print(Fore.YELLOW + f"\nWelcome to the Mastermind Game, {player_name}!\n")
     attempts = select_difficulty()
