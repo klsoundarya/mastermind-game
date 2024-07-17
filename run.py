@@ -73,7 +73,18 @@ def get_player_name():
             return req_name
         if name_attempts == max_name_attempts:
             print(Fore.CYAN + "Too many invalid tries, please start over.\n")
+    # it will ask the user, if they want to try again
+    while True:
+        restart = input("Retry entering your name? (y/n): ").strip().lower()
+        if restart == "y":
+            clear_the_terminal()
+            return get_player_name()
+        elif restart == "n":
+            clear_the_terminal()
+            print(Fore.LIGHTGREEN_EX + "\nThank you for playing! Goodbye!\n")
             exit()
+        else:
+            print(Fore.YELLOW + "\nInvalid input, please enter 'y'/'n'.\n")
 
 
 def select_difficulty():

@@ -393,6 +393,10 @@ By incorporating these features, it will attract a broader audience to enjoy the
 <summary>Testing Report</summary>
 <br>
 
+The game passed through the **Lighthouse test**
+
+- [Lighthouse test](read-me/validator-testing/light-house-testing.PNG)
+
 #### PEP8 CI Python Linter
 
 [PEP8 CI Linter](https://pep8ci.herokuapp.com) was used to validate my **run.py** file.
