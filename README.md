@@ -36,14 +36,14 @@
   - [Making a Local Clone](#making-a-local-clone)
 - [Design](#design)
   - [UX](#ux)
-- [Features](#features)
+- [Features](#features) 
   - [Existing Features](#existing-features)
   - [How to Play](#how-to-play)
-  - [Look of the Game](#look-of-the-game)
   - [Features to Implement](#features-to-implement)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
   - [Validator Testing](#validator-testing)
+  - [PEP8 CI Python Linter](#pep8-ci-python-linter)
   - [Bugs](#bugs)
     - [Unfixed Bugs](#unfixed-bugs)
 - [Credits](#credits)
@@ -348,13 +348,78 @@ These features collectively create an interactive and user-friendly game experie
 
 This user-friendly gameplay ensures that players receive clear and actionable feedback, making the game both challenging and engaging.
 
-## Look of the Game
-
-![Welcome page](read-me/images/)
-![Error message](read-me/images/)
-![Game instructions](read-me/images/)
-
 ## Features to Implement
+
+1. **Score Tracking**:
+   - Tracking high scores will be based on the number of attempts taken to guess the secret number, and display the top scores at the end of each game or in a high scores section.
+
+2. **Hint System**:
+   - Will Implement a hint system that offers a clue after several incorrect guesses, revealing one digit of the secret number or narrowing down possible digits.
+
+3. **Sound Effects and Music**:
+   - Incorporate sound effects for correct and incorrect guesses, as well as background music to enhance the gaming experience.
+
+4. **Multiplayer Mode**:
+   - Implement a multiplayer mode where two players can take turns guessing the secret number or compete against each other.
+
+5. **Achievements and Rewards**:
+   - Introducing achievements or rewards for completing certain challenges within the game, such as guessing the number within a minimal number of attempts.
+
+6. **Save and Load Game**:
+   - Allowing players to save their current game state and resume it later, preserving their progress.
+
+7. **Social Sharing**:
+   - Will Integrate social media sharing capabilities to allow players to share their achievements or high scores with friends.
+
+By incorporating these features, it will attract a broader audience to enjoy the game.
+
+</details>
+
+## Testing
+
+### Manual Testing
+
+<!-- Created Table from Table generator -->
+<details>
+<summary>User Testing</summary>
+<br>
+
+
+</details>
+
+### Validator Testing
+
+<details>
+<summary>Testing Report</summary>
+<br>
+
+#### PEP8 CI Python Linter
+
+[PEP8 CI Linter](https://pep8ci.herokuapp.com) was used to validate my **run.py** file.
+
+| Testing                    	| Notes                                                                                               	| Report  	|
+|----------------------------	|-----------------------------------------------------------------------------------------------------	|---------	|
+| ![PEP8-warnings](read-me/validator-testing/pep8-unfixed-bug.PNG) 	| The whitespace in the title art cannot be removed, as it would distort the appearance of the title. 	| Unfixed 	|
+
+</details>
+
+### Bugs
+
+<details>
+<summary>Bugs Fixed</summary>
+<br>
+
+| No. 	| Bugs               	| Solution                                                                                                                                                                                                                                           	| Notes 	|
+|-----	|--------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|-------	|
+| 1.  	| ![Bug 1](read-me/bugs/bug1.PNG) 	| Code issues include trailing whitespace (W291), insufficient spaces before inline comments (E261), module level imports not at the top (E402), block comments not starting with '#' (E265), and lines exceeding 79 characters (E501).              	| Fixed   	|
+| 2.  	| ![Bug 2](read-me/bugs/bug2.PNG) 	| There are issues with trailing whitespace, line length exceeding 79 characters, and incorrect blank line formatting throughout the code.                                                                                                           	| Fixed   	|
+| 3.  	| ![Bug 3](read-me/bugs/bug3.PNG) 	| There are issues with lines exceeding character limits (106, 114, 117, 126, 132, 134, 136), incorrect indentation spaces (109), missing '#' for inline comment (109), and unnecessary blank lines containing whitespace (112, 115, 119, 124, 128). 	| Fixed   	|
+
+### Unfixed Bugs
+
+The only remaining issue to fix is the trailing whitespace in the title art..
+
+</details>
 
 </details>
 

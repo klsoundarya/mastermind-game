@@ -31,7 +31,7 @@ def display_rules():
     """
     Function to display the game rules.
     """
-    print(Fore.LIGHTRED_EX + "▞▞▞▞▞ 🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
+    print(Fore.LIGHTRED_EX + "▞▞▞▞▞  🆁 🆄 🅻 🅴 🆂 ▝▞▞▞▞▞\n" + Fore.RESET)
     print("1. Guess the random 5-digit number within the difficulty level.\n")
     print("2. Choose a number between 10,000 and 99,999.\n")
     print("3. After each guess, the computer shows:")
@@ -110,9 +110,9 @@ def game_play(player_name, attempts):
     secret_number = generate_secret_number()  # saving the value in a variable
     guess_count = 0  # Initialize the guess counter
     while guess_count < attempts:
-        guess = input(Fore.RED + f"\nYou have {attempts - guess_count} attempts left: ")
+        guess = input(f"\nYou have {attempts - guess_count} attempts left: ")
         if guess.lower() == 'q':
-            print(Fore.LIGHTGREEN_EX + f"\nYou quit. Goodbye, {player_name}!\n")
+            print(Fore.LIGHTGREEN_EX + f"You quit. Goodbye, {player_name}!\n")
             return
         if guess.lower() == 's':
             print(Fore.LIGHTGREEN_EX + "\nStarting a new game...\n")
@@ -128,7 +128,7 @@ def game_play(player_name, attempts):
         elif int(guess) > int(secret_number):
             print(Fore.YELLOW + "\nYour guess is too high. Try again.\n")
         else:
-            print(Fore.GREEN + f"\nFab! {secret_number} is the secret number!\n")
+            print(Fore.GREEN + f"Fab! {secret_number} is the secret number!\n")
             return
         correct_digits = 0  # Initializes the counter for correct digits.
         feedback = ["X"] * 5  # Creates a list of five "X" characters.
@@ -136,9 +136,9 @@ def game_play(player_name, attempts):
             if guess[i] == secret_number[i]:
                 correct_digits += 1
                 feedback[i] = Fore.LIGHTRED_EX + guess[i] + Fore.RESET
-        print(f"Not the right number, but you got {correct_digits} digits right\n")
+        print(f"Wrong number, but {correct_digits} digit(s) right\n")
         print(Fore.GREEN + "Feedback on digits: ", " ".join(feedback) + "\n")
-    print(Fore.RED + f"Sorry, {player_name}. The number was {secret_number}.\n")
+    print(Fore.RED + f"Sorry, {player_name}. The num was {secret_number}.\n")
 
 
 def main_menu():
