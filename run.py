@@ -75,13 +75,13 @@ def get_player_name():
             print(Fore.CYAN + "Too many invalid tries, please start over.\n")
     # it will ask the user, if they want to try again
     while True:
-        restart = input("Retry entering your name? (y/n): ").strip().lower()
-        if restart == "y":
+        retry = input("Retry entering your name? (y/n): ").strip().lower()
+        if retry == "y":
             clear_the_terminal()
             return get_player_name()
-        elif restart == "n":
+        elif retry == "n":
             clear_the_terminal()
-            print(Fore.LIGHTGREEN_EX + "\nThank you for playing! Goodbye!\n")
+            print("\nThank you! To continue, click 'Run Program'.\n")
             exit()
         else:
             print(Fore.YELLOW + "\nInvalid input, please enter 'y'/'n'.\n")
@@ -114,6 +114,7 @@ def generate_secret_number():
     return str(random.randint(10000, 99999))
 
 
+# From: https://www.geeksforgeeks.org/mastermind-game-using-python/
 def game_play(player_name, attempts):
     """
     Function to play game, the player has to guess the 5-digit secret number.
@@ -121,7 +122,7 @@ def game_play(player_name, attempts):
     secret_number = generate_secret_number()  # saving the value in a variable
     guess_count = 0  # Initialize the guess counter
     while guess_count < attempts:
-        guess = input(f"\nYou have {attempts - guess_count} attempts left: ")
+        guess = input(f"\nEnter a num in {attempts - guess_count} attempts:  ")
         if guess.lower() == 'q':
             print(Fore.LIGHTGREEN_EX + f"You quit. Goodbye, {player_name}!\n")
             return
@@ -130,7 +131,7 @@ def game_play(player_name, attempts):
             main_menu()
             return
         if not guess.isdigit() or len(guess) != 5:
-            print(Fore.YELLOW + "\nInvalid input. Enter only a number.\n")
+            print(Fore.YELLOW + "\nInvalid input. Enter 5 digit num.\n")
             continue
         guess_count += 1
 
@@ -147,7 +148,7 @@ def game_play(player_name, attempts):
             if guess[i] == secret_number[i]:
                 correct_digits += 1
                 feedback[i] = Fore.LIGHTRED_EX + guess[i] + Fore.RESET
-        print(f"Wrong number, but {correct_digits} digit(s) right\n")
+        print(f"{correct_digits} digit(s) right\n")
         print(Fore.GREEN + "Feedback on digits: ", " ".join(feedback) + "\n")
     print(Fore.RED + f"Sorry, {player_name}. The num was {secret_number}.\n")
 
