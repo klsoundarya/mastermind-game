@@ -137,7 +137,7 @@ The Mastermind game is designed for puzzle enthusiasts and individuals who enjoy
 #### Forking
 
 <details>
-<summary></summary>
+<summary>Please follow the steps below</summary>
 <br>
 
 By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
