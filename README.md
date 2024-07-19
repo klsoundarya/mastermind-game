@@ -19,8 +19,17 @@
 <br>
 
 Due to ongoing changes in the project development process, the current flowchart design differs slightly from the project as it is now.
+<!-- The full flowchart image I created in Canva was not clearly visible after downloading, so I divided the image for better clarity. Additionally, below is the full view of the flowchart. -->
 
 ![screenshot](read-me/images/master-mind-game-flowchart.png)
+![screenshot](read-me/images/part-1.PNG)
+![screenshot](read-me/images/part-2.PNG)
+![screenshot](read-me/images/part-3.PNG)
+![screenshot](read-me/images/part-4.PNG)
+![screenshot](read-me/images/part-5.PNG)
+![screenshot](read-me/images/part-6.PNG)
+![Full-image](read-me/images/mastermind-flowchart.png)
+
 
 </details>
 
